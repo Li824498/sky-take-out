@@ -51,4 +51,12 @@ public interface SetmealMapper {
      * @param setmeal
      */
     void update(Setmeal setmeal);
+
+    /**
+     * 套餐起售停售
+     * @param status
+     * @param id
+     */
+    @Update("update setmeal set status = #{status} where id = #{id}")
+    void setStatus(Integer status, Long id);
 }

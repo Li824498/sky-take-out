@@ -26,7 +26,15 @@
             <if test="image != null">
                 image = #{image},
             </if>
+            <if test="status != null">
+                status = #{status}
+            </if>
         </set>
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+        </where>
     </update>
     <select id="pageQuery" resultType="com.sky.vo.SetmealVO">
         select s.*, c.name categoryName
